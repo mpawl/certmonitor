@@ -12,7 +12,7 @@ Certmonitor relies on external services:
 
 ## sslmate
 
-No API key is required for up to 10 domain queries per hour. Details [here](https://sslmate.com/ct_search_api/)
+No API key is required for up to 10 domain queries per hour from an IP address. Details [here](https://sslmate.com/ct_search_api/)
 
 ## Email account to send alerts from
 
@@ -33,9 +33,9 @@ Once the Python venv is installed and activated, install Python library dependen
 python3 -m pip install -r requirements.txt
 ```
 
-## Setting up the '.env' File
+## Setting up the `.env` File
 
-Certmonitor will search for the '.env' file in the same directory as 'certmonitor.py'. Below is a template for you to create your own '.env' file:
+Certmonitor will search for the '.env' file in the same directory as `certmonitor.py`. Below is a template for you to create your own '.env' file:
 
 ```
 EMAIL_USER = '@gmail.com'
@@ -46,7 +46,7 @@ EMAIL_SERVER_PORT = 587
 
 ## Setting up Log File
 
-Certmonitor will by default use './certmonitor.log' as the log file for the previously seen certificates. SHA-256 hashes are logged in this file. Each subsequent run will consume this file and compare the currently active certificates found querying sslmate's API to the certificates alerady seen in the log file. If active certificates are seen for the first time, an email alert will be sent if alerting is configured. 
+Certmonitor will by default use `./certmonitor.log` as the log file for the previously seen certificates. SHA-256 hashes are logged in this file. Each subsequent run will consume this file and compare the currently active certificates found querying sslmate's API to the certificates alerady seen in the log file. If active certificates are seen for the first time, an email alert will be sent if alerting is configured. 
 
 # Usage
 
@@ -56,7 +56,7 @@ usage: certmonitor.py [-h] --domain [DOMAIN] [--log [LOG]] [--destemail [DESTEMA
 options:
   -h, --help            show this help message and exit
   --domain [DOMAIN]     Domain or hostname to monitor in CT logs.
-  --log [LOG]           Log file cert hashes to be read from and written to. By default, this is ./certmonitor.log.
+  --log [LOG]           Log file for cert hashes to be read from and written to. By default, this is ./certmonitor.log.
                         You must have write permissions to the specified file and enclosing directory. The file and
                         enclosing directory[ies] must already exist.
   --destemail [DESTEMAIL]

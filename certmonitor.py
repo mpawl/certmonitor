@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # Args
 parser = argparse.ArgumentParser()
 parser.add_argument('--domain', nargs='?', type=str, required=True, help='Domain or hostname to monitor in CT logs.')
-parser.add_argument('--log', nargs='?', type=str, default="./certmonitor.log", help='Log file cert hashes to be read from and written to. By default, this is ./certmonitor.log. You must have write permissions to the specified file and enclosing directory. The file and enclosing directory[ies] must already exist.')
+parser.add_argument('--log', nargs='?', type=str, default="./certmonitor.log", help='Log file for cert hashes to be read from and written to. By default, this is ./certmonitor.log. You must have write permissions to the specified file and enclosing directory. The file and enclosing directory[ies] must already exist.')
 parser.add_argument('--destemail', nargs='?', type=str, help='Email to send alerts to if new certs are found in CT log. If no email provided, result will print to stdout only.')
 args = parser.parse_args()
 
