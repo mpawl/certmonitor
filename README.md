@@ -71,3 +71,14 @@ Cron jobs are an easy way to automate regular queries and alerting. Below is an 
 `20 * * * * /bin/bash -c 'source /home/user/certmonitor/venv/bin/activate && python /home/user/certmonitor/certmonitor.py --domain <domain> --log /home/user/certmonitor/certmonitor.log --destemail <email_recipient> >/dev/null 2>&1'`
 
 You may also use this foundation to create a bash script and call the bash script from the cron job. 
+
+# Results
+
+If a unseen active certificate is found, the output will look as follows, in stdout and in the email alert. 
+
+```
+SHA256:  ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+Created: 2024-01-01T00:00:00Z
+Host(s): ['*.example.com', 'example.com']
+Link: https://crt.sh/?q=ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+```
