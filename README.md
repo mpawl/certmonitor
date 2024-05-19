@@ -8,7 +8,7 @@ Certmonitor is developed with the lowest common demoninator in mind. Basic outpu
 Certmonitor relies on external services:
 
 1. sslmate free tier certifiate transparency API.
-1. Email account with exteranl SMTP access with a basic username and password.
+1. Email account with exteranl SMTP access with tunneled plain text username and password login.
 
 ## sslmate
 
@@ -16,9 +16,9 @@ No API key is required for up to 10 domain queries per hour from an IP address. 
 
 ## Email account to send alerts from
 
-I recommend setting up a Gmail account to use for IT infrastructure alerts. Although, given that this script levereges 'smtplib' to send plain text email, any email provider can be used that supports SMTP over SSL with tunneled plain text credentials. 
+I recommend setting up a Gmail account to use for IT infrastructure alerts. Although, given that this script levereges `smtplib` to send plain text email, any email provider can be used that supports SMTP over SSL with tunneled plain text credentials. 
 
-If you choose to set up a Gmail account to use for alerts, you must open the account, enable MFA, enable SMTP/IMAP, and create an app password. Copy the app passowrd and it will be popualted in to the '.env' file for certmonitor. 
+If you choose to set up a Gmail account to use for alerts, you must open the account, enable MFA, enable SMTP/IMAP, and create an app password. Copy the app passowrd and it will be popualted in to the `.env` file for certmonitor. 
 
 # Installation and Setup
 
@@ -35,7 +35,7 @@ python3 -m pip install -r requirements.txt
 
 ## Setting up the `.env` File
 
-Certmonitor will search for the '.env' file in the same directory as `certmonitor.py`. Below is a template for you to create your own '.env' file:
+Certmonitor will search for the `.env` file in the same directory as `certmonitor.py`. Below is a template for you to create your own `.env` file:
 
 ```
 EMAIL_USER = '@gmail.com'
@@ -46,7 +46,7 @@ EMAIL_SERVER_PORT = 587
 
 ## Setting up Log File
 
-Certmonitor will by default use `./certmonitor.log` as the log file for the previously seen certificates. SHA-256 hashes are logged in this file. Each subsequent run will consume this file and compare the currently active certificates found querying sslmate's API to the certificates alerady seen in the log file. If active certificates are seen for the first time, an email alert will be sent if alerting is configured. 
+Certmonitor will, by default, use `./certmonitor.log` as the log file for previously seen certificates. SHA-256 hashes are logged in this file. Each subsequent run will consume this file and compare the currently active certificates found querying sslmate's API to the certificates alerady seen in the log file. If active certificates are seen for the first time, an email alert will be sent if alerting is configured. 
 
 # Usage
 
@@ -74,7 +74,7 @@ You may also use this foundation to create a bash script and call the bash scrip
 
 # Results
 
-If a unseen active certificate is found, the output will look as follows, in stdout and in the email alert. 
+If an unseen active certificate is found, the output will look as follows, in stdout and in the email alert. 
 
 ```
 SHA256:  ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
