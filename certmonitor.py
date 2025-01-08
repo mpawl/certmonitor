@@ -76,7 +76,7 @@ def do_search(self, f, prev_run_set):
         for dct in response:
             if dct['cert_sha256'] not in prev_run_set:
                 d = dct['cert']
-                alert_list.append({'sha256':d['sha256'], 'dns_names':str(dct['dns_names']), 'not_before':dct['not_before'], 'link':str(f"https://crt.sh/?q={d['sha256']}")})
+                alert_list.append({'sha256':d['sha256'], 'dns_names':str(dct['dns_names']), 'not_before':dct['not_before'], 'link':str(f"https://crt.sh/?spkisha256={dct['pubkey_sha256']}&exclude=expired&deduplicate=Y")})
                 f.write(dct['cert_sha256'] + '\n')
 
     except Exception as e:
