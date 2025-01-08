@@ -80,5 +80,5 @@ If an unseen active certificate is found, the output will look as follows, in st
 SHA256:  ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
 Created: 2024-01-01T00:00:00Z
 Host(s): ['*.example.com', 'example.com']
-Link: https://crt.sh/?q=ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+Link:  https://crt.sh/?spkisha256=f09ec3bce9e4c11f391ffd212e986b132bca392092dde67c2cb55f1affc57a3a&exclude=expired&deduplicate=Y
 ```
