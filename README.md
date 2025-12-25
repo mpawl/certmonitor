@@ -68,7 +68,7 @@ options:
 
 Cron jobs are an easy way to automate regular queries and alerting. Below is an example of a cron job that will run once per hour, at 20 minutes past the hour, utilizing the Python virtual enviornment. 
 
-`20 * * * * /bin/bash -c '/home/user/certmonitor/venv/bin/python /home/user/certmonitor/certmonitor.py --domain <domain> --log /home/user/certmonitor/certmonitor.log --destemail <email_recipient> >/dev/null 2>&1'`
+`20 * * * * /home/user/certmonitor/venv/bin/python /home/user/certmonitor/certmonitor.py --domain <domain> --log /home/user/certmonitor/certmonitor.log --destemail <email_recipient> >/dev/null 2>&1`
 
 You may also use this foundation to create a bash script and call the bash script from the cron job. 
 
